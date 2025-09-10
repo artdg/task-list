@@ -1,0 +1,163 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.todo-container {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+input {
+  width: 70%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  margin-right: 0.5rem;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+button:hover {
+  border-color: #959bff;
+  transform: scale(1.05);
+}
+
+.button-group {
+  display: flex;               /* кнопки в ряд */
+  margin-top: 0.5rem;          /* отступ от input */
+  gap: 0.5rem;                 /* промежуток между кнопками */
+  justify-content: center;      /* выравнивание по центру */
+}
+
+.button-group button {
+  flex: 1;                      /* растягиваются равномерно */
+  min-width: 0;                 /* чтобы не превышали контейнер */
+  padding: 0.5rem 1rem;         /* внутренние отступы */
+  box-sizing: border-box;       /* учитываем padding при ширине */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  overflow: hidden;
+}
+
+li input[type="checkbox"] {
+  flex: 0 0 16px;   /* фиксированная ширина чекбокса */
+  margin-left: 10px; /* чтобы всегда был сдвинут на 10px от края */
+}
+
+li span {
+  flex: 1;                /* текст занимает всё доступное пространство */
+  overflow-wrap: break-word; /* перенос длинных слов */
+  white-space: pre-wrap;  /* перенос по пробелам */
+}
+
+li button {
+  flex: 0 0 auto; /* фиксируем кнопку справа */
+  margin-left: auto; /* всегда у правого края */
+}
+
+li.removing {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+a:hover {
+  color: #535bf2;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  .todo-container {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  input {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #ccc;
+  }
+  button {
+    background-color: #f0f0f0;
+  }
+  li {
+    background-color: #f4f4f4;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
